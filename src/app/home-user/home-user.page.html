@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="light"></ion-menu-button>
+    </ion-buttons>
+
+
+    <ion-button slot="primary" expand="block" fill="clear" shape="round">
+      <ion-icon slot="start" name="notifications-outline" color="light"></ion-icon>
+    </ion-button>
+    <ion-title color="light">TeLlevoApp</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <app-menu></app-menu>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="getLocation()">
+    <ion-fab-button>
+      <ion-icon name="locate-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div id="map">
+  </div>
+
+    <div class="container-input">
+      <div class="input-item">
+        <img src="../../../assets/icon/navigation.png" alt="" width="20px" style="margin-left: 4px;">
+        <ion-input type="text" value="¿A donde vamos?" (click)="presentModal()"></ion-input>
+      </div>
+    </div>
+
+
+  </ion-content>

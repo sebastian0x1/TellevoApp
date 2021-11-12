@@ -1,27 +1,69 @@
-#container {
-  text-align: center;
+#background {
+  height: 75%;
+  width: 100%;
+  background: url('../../assets/home/bb.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
 
+}
+
+#polygon{
   position: absolute;
+  height: 40%;
+  width: 100%;
   left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0;
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+  
+  background: #75BFEA;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+
+ion-content{
+  --overflow: hidden;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-button{
+  --background: #2B3670;
+  --background-activated: white;
+  --color-activated: #2B3670; 
 }
 
-#container a {
-  text-decoration: none;
+
+
+#signup-button{
+  --background: white;
+  --color: #2B3670;
+  --background-activated: #2B3670;
+  --color-activated: white 
+}
+
+
+#car{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+section{
+  margin-top: 35%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+h1{
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  color: #1E2756;
+}
+
+p{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  color: #1E2756;
+  font-size: 14px;
+  margin-left: 12px;
 }

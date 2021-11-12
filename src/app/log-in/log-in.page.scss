@@ -1,0 +1,81 @@
+
+
+
+#background {
+    height: 75%;
+    width: 100%;
+    background: url('../../assets/home/bb.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+
+#modal{
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    height: 75vh;
+    width: 100%;
+    border-radius: 25px;
+
+
+}
+
+#car{
+    position: absolute;
+    top: -82px;
+}
+
+
+ion-grid{
+    margin-top: 10%;
+    --ion-grid-width: 90%;
+    
+}
+
+ion-col{
+    --ion-grid-column-padding: 5px;
+
+}
+
+
+ion-item-divider{
+    --background: transparent;
+}
+
+ion-input{
+    --background: #E5E5E5;
+    border-radius: 100px;
+    --padding-start: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 10px;
+    
+    
+}
+
+ion-button{
+ --background: #2B3670;
+ --background-activated: #E5E5E5;
+ --color-activated: #2B3670; 
+}
+
+ion-content{
+    --overflow: hidden;
+}
+
+
+
+.label-link{
+    font-size: 15px;
+    font-weight: 600;
+    color: #2B3670;
+
+}
+
+.label-normal{
+    color: gray;
+    font-size: 14px;
+    padding-right: 0;
+}

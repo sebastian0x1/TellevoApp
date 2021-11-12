@@ -1,0 +1,42 @@
+<ion-content>
+
+  <div id="background">
+    <div id="modal">
+      <img id="car" src="../../assets/home/car.png" alt="car">
+      <ion-item-divider></ion-item-divider>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12">
+            <ion-input class="ion-padding-vertical" type="email" placeholder="Correo" #username></ion-input>
+          </ion-col>
+          <ion-col size="12">
+            <ion-input class="ion-padding-vertical" type="password" placeholder="Contraseña" #password></ion-input>
+          </ion-col>
+      <ion-item-divider></ion-item-divider>
+          <ion-col size="12"><ion-item-divider></ion-item-divider></ion-col>
+          <ion-col size="12">
+            <ion-button (click)="login()" expand="block" shape="round">
+              Iniciar Sesion
+            </ion-button>
+          </ion-col>
+          <ion-col size="7" offset="3">
+
+             <label  class="label-link ion-text-center"routerLink="/lost-key" id="labelLostKey">¿Olvidaste tu clave?</label>
+          </ion-col>
+      <ion-item-divider></ion-item-divider>
+          <ion-col size="5" offset="1">
+            <label class="label-normal">¿No tienes cuenta?</label>
+          </ion-col>
+          <ion-col size="6">
+            <label routerLink="/signup" class="label-link">Registrate</label>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+
+
+
+</ion-content>

@@ -1,0 +1,27 @@
+
+
+
+
+
+<ion-content>
+  <div class="container-input">
+    <div class="input-item">
+     <img src="../../../assets/icon/pin.png" alt="" width="9px" height="27px">
+     <ion-input  class="origin"    (click)="setInput($event)" (ionInput)="initService($event)" type="text" placeholder="Ubicacion" #origin></ion-input>
+    </div>
+    <div class="line"></div>
+     <div class="input-item">
+       <img src="../../../assets/icon/navigation.png" alt="" width="20px" style="margin-left: 4px;">
+       <ion-input  (click)="setInput($event)" (ionInput)="initService($event)" type="text" placeholder="Destino" #destiny></ion-input>
+     </div>
+  </div>
+  
+
+
+ <div class="container-list" id="modal">
+   <ion-list id="list-prediction">
+   </ion-list>
+ </div>
+</ion-content>
+
+

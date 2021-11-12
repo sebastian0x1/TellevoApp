@@ -1,20 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div id="background">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col class="ion-margin" size="12"></ion-col>
+        <ion-col size="12">
+          <h1>TeLlevoApp</h1>
+        </ion-col>
+        <ion-col size="12">
+            <p class="ion-no-margin">Compartir el mismo viaje</p>
+            <p class="ion-no-margin">Nunca fue tan divertido</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div id="polygon">
+      <img id="car" src="../../assets/home/car.png" alt="car">
+      <section>
+        <ion-button  routerLink="/log-in" class="ion-margin" expand="block" size="default" shape="round">Iniciar Sesion</ion-button>
+        <ion-button routerLink="/signup" id="signup-button" class="ion-margin" expand="block" size="default" shape="round">Registrarme</ion-button>
+      </section>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
 </ion-content>
