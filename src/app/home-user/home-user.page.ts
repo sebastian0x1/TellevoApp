@@ -4,6 +4,9 @@ import { ModalPage } from '../components/modal/modal.page';
 import { IonRouterOutlet, ModalController } from '@ionic/angular';
 import { UserDirectionsService } from '../services/user-directions.service';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { ResumeModalPage } from '../components/resume-modal/resume-modal.page';
+
+
 declare var google;
 
 @Component({
@@ -16,11 +19,16 @@ declare var google;
 export class HomeUserPage implements OnInit {
 
   map = null;
+  modalHasCreated = false;
   myLatLng = { lat: -36.795331, lng: -73.0647615 };
   iconBase = 'https://cittduocfestival.s3.sa-east-1.amazonaws.com/icons/'
   geocoder = new google.maps.Geocoder();
   directionsService = new google.maps.DirectionsService();
   directionsRenderer = new google.maps.DirectionsRenderer();
+  parkings = {
+    "santa Isabel": [-36.79021021205744, -73.06091049727428, 690],
+    "Mall Plaza": [-36.79152183471218, -73.06566337693754, 5120]
+  }
  
 
 
@@ -50,6 +58,7 @@ export class HomeUserPage implements OnInit {
 
 
   async presentModal() {
+    
     const modal = await this.modalController.create({
       component: ModalPage,
       cssClass: 'modalStyle',
@@ -80,18 +89,22 @@ export class HomeUserPage implements OnInit {
         url: this.iconBase + 'red+circle.png',
         scaledSize: new google.maps.Size(32, 32)
       }
+      
     })
 
+    for (const [placeName, location] of Object.entries(this.parkings)){
 
-    // var circle = new google.maps.Circle({
-    // 	radius: 20, 
-    // 	center: marker.getPosition(),
-    // 	map: this.map,
-    // 	fillColor: '#FF0000',
-    // 	fillOpacity: 0.2,
-    // 	strokeColor: '#FF0000',
-    // 	strokeOpacity: 0.6
-    //     }); 
+    let marker = new google.maps.Marker({
+      position: {lat: location[0], lng:location[1]},
+      map: this.map,
+      icon: {
+        url: this.iconBase + 'car.png',
+        scaledSize: new google.maps.Size(32, 32)
+      }
+      
+    })
+
+    } 
   }
   
 
@@ -103,10 +116,23 @@ export class HomeUserPage implements OnInit {
       destination: directionsData['destinyInput'],
       travelMode: 'DRIVING'
     };
-    this.directionsService.route(request, (result, status) => {
-      console.log(request)
+    this.directionsService.route(request, async (result, status) => {
       if (status == 'OK') {
         this.directionsRenderer.setDirections(result);
+        
+      
+          const modal = await this.modalController.create({
+            component: ResumeModalPage,
+            cssClass: 'parkinModalStyle',
+            // componentProps: {parkingName: placeName, 
+            //                  coords: marker.getPosition() as google.maps.LatLng,
+            //                  price: location[2] 
+            //                 },
+            swipeToClose: true,
+            presentingElement: await this.modalController.getTop()
+          });
+          return await modal.present();   
+ 
       }
     });
   }
@@ -124,7 +150,6 @@ export class HomeUserPage implements OnInit {
       if (response.results[0]) {
         const searchbarOrigin = document.querySelector('ion-searchbar');
         searchbarOrigin.value = response.results[0].formatted_address
-
 
       } else {
         console.log("No results found");

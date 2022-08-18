@@ -19,7 +19,7 @@ import { ModalPageModule } from '../components/modal/modal.module';
     HomeUserPageRoutingModule,
     MenuPageModule,
     GoogleMapsModule,
-    ModalPageModule
+    ModalPageModule,
   ],
   declarations: [HomeUserPage]
 })

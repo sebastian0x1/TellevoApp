@@ -33,7 +33,6 @@ export class ModalPage {
       status: google.maps.places.PlacesServiceStatus
     ) => {
       if (status != google.maps.places.PlacesServiceStatus.OK || !predictions) {
-        console.log(status);
         return;
       }
       let list = document.getElementById('list-prediction') as HTMLElement
@@ -46,7 +45,6 @@ export class ModalPage {
         })
         item.classList.add('item')
         item.innerHTML = prediction.description
-        console.log(prediction.description)
         list.insertAdjacentElement('beforeend', item)
       });
 
@@ -65,6 +63,9 @@ export class ModalPage {
   setPrediction = (e) => {
     this.selectedInput.value = e.target.outerText
     if(this.originInput.value && this.destinyInput.value){
+      console.log(this.originInput)
+      console.log(this.destinyInput)
+
       this.directionsService.triggerLocations.emit({"originInput": this.originInput.value, "destinyInput": this.destinyInput.value})
     }
     
@@ -76,11 +77,11 @@ export class ModalPage {
 
 
   setInput(e) {
-    if(e.target.name === "ion-input-1"){
+    if(e.target.name === "origin"){
       this.selectedInput = this.originInput
     }
 
-    else{
+    else if (e.target.name === "destiny"){
       this.selectedInput = this.destinyInput
     }
 

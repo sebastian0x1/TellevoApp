@@ -27,10 +27,26 @@
 
 
 .modalStyle{
-    position: absolute;
-    top: 9vh;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+     position: absolute;
+     top: 9vh;
+     border-top-left-radius: 30px;
+     border-top-right-radius: 30px;
+     
+     .modal-wrapper{
+        height: 90%;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        bottom: 0px;
+        
+     }
+     .modal-shadow{
+         background: white;
+     }    
+        
+}
 
-    
+.parkinModalStyle{
+   position: absolute;
+   top: 50%; 
+   height: 50%; 
 }

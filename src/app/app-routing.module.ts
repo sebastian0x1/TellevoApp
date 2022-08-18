@@ -27,12 +27,15 @@ const routes: Routes = [
   },
   {
     path: 'home-user',
-    canActivate: [LogguedGuard],
     loadChildren: () => import('./home-user/home-user.module').then( m => m.HomeUserPageModule)
   },
   {
     path: 'menu',
     loadChildren: () => import('./components/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'resume-modal',
+    loadChildren: () => import('./components/resume-modal/resume-modal.module').then( m => m.ParkingModalPageModule)
   },
  
   
